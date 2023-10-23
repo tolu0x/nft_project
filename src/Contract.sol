@@ -34,4 +34,11 @@ contract NFT is ERC721A, Ownable {
         _mint(to, quantity);
         ++totalminted;
     }
+
+    function withdraw() external onlyOwner{
+        uint256 balance = address(this).balance;
+        payable (ownerAddress).transfer(balance);
+    }
+
+    receive() payable external{}
 }
