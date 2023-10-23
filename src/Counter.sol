@@ -1,14 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Counter {
-    uint256 public number;
+import "erc721a/erc721a.sol";
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
+contract NFT is ERC721A {
+    constructor() ERC721A("NFT", "NFT") {}
 
-    function increment() public {
-        number++;
+    function mint(address to, uint256 tokenId) public {
+        _mint(to, tokenId);
     }
 }
