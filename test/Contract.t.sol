@@ -1,24 +1,24 @@
-// // SPDX-License-Identifier: UNLICENSED
-// pragma solidity ^0.8.13;
+// // SPDX-License-Identifier: MIT
+// pragma solidity ^0.8.21;
 
 // import {Test, console2} from "forge-std/Test.sol";
-// import {Counter} from "../src/Counter.sol";
+// import {Contract} from "../src/Contract.sol";
 
-// contract CounterTest is Test {
-//     Counter public counter;
+// contract ContractTest is Test {
+//     Contract public contract;
 
 //     function setUp() public {
-//         counter = new Counter();
-//         counter.setNumber(0);
+//         contract = new Contract(0x0);
+//         contract.setNumber(0);
 //     }
 
 //     function test_Increment() public {
-//         counter.increment();
-//         assertEq(counter.number(), 1);
+//         contract.increment();
+//         assertEq(contract.number(), 1);
 //     }
 
 //     function testFuzz_SetNumber(uint256 x) public {
-//         counter.setNumber(x);
-//         assertEq(counter.number(), x);
+//         contract.setNumber(x);
+//         assertEq(contract.number(), x);
 //     }
 // }
