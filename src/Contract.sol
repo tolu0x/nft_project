@@ -15,6 +15,8 @@ contract NFT is ERC721A, Ownable {
     uint256 totalminted;
     address ownerAddress;
 
+    string private baseURI;
+
 
     /* ERRORS */
     error insufficientMintAmount();
@@ -23,6 +25,14 @@ contract NFT is ERC721A, Ownable {
 
     constructor(address initialOwner) Ownable(initialOwner) ERC721A("NFT", "NFT") {
         ownerAddress = initialOwner;
+    }
+
+    function _baseURI() internal view override returns (string memory) {
+        return baseURI;
+    }
+
+    function setBaseURI(string calldata uri) external onlyOwner{
+        baseURI = uri;
     }
 
     function mint(uint256 quantity) public payable {
